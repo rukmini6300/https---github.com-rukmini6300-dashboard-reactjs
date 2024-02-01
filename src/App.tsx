@@ -18,14 +18,14 @@ function App() {
     setNewTable((p): any => [...p, inputValue]);
     setInputValue({title: "",  points: "",description:"",status:"",priority:""});
   };
-  // const rowDeleted=()=>{
-  //   console.log("deleted")
-  // }
+  const deleteRow = (index: number) => {
+    setNewTable((prevTable) => prevTable.filter((item:any, i:any) => i !== index));
+  };
   return (
     <div className='main_component'  >
     <NavMenu handleChangeCallback = {handleChange} submitData = {submitData} inputValue = {inputValue}/>
    <div className='body_cont'>
-     <Header newTable={newTable} />
+     <Header newTable={newTable} deleteRow={deleteRow} />
    </div>
     </div>
   )

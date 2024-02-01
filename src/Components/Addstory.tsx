@@ -18,7 +18,7 @@ function Addstory(props: any){
       setTitleError("");
     }
 
-    if (isNaN(inputValue.points) || inputValue.points >= 8) {
+    if (isNaN(inputValue.points) || inputValue.points >= 8 ) {
       setPointsError("Points should be max value 8");
       isValid = false;
     } else {
@@ -30,8 +30,8 @@ function Addstory(props: any){
     } else {
       setStatus("");
     }
-    if (inputValue.priority.length < 5) {
-      setPriority("This field is Mandatory select");
+    if (inputValue.priority.length == 0) {
+      setPriority("This priority field is Mandatory");
       isValid = false;
     } else {
       setPriority("");
@@ -46,6 +46,7 @@ function Addstory(props: any){
 
     return isValid;
   };
+ 
   return (
     <>  
       <div className="story_main">
@@ -97,7 +98,6 @@ function Addstory(props: any){
                value={inputValue.title}
               onChange={handleChangeCallback}
               />
-               {/* {error && <p className="error_message">{error}</p>} */}
                {titleError && <p className="error_message">{titleError}</p>}
                
             </div>
@@ -111,7 +111,6 @@ function Addstory(props: any){
                 value={inputValue.points}
                 onChange={handleChangeCallback}
               />
-                {/* {error && <p className="error_message">{error}</p>} */}
                 {pointsError && <p className="error_message">{pointsError}</p>}
             </div>
           </div>
