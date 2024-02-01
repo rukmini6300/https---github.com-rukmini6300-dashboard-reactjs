@@ -2,7 +2,50 @@ import { useState } from "react";
 import "../App.css";
 function Addstory(props: any){
     const {handleChangeCallback, submitData, inputValue } = props ;
- 
+    const [titleError, setTitleError] = useState("");
+    const [pointsError, setPointsError] = useState("");
+    const [Status,setStatus]=useState("");
+    const [priority,setPriority]=useState("")
+    const [descriptionError, setDescriptionError] = useState("");
+
+  const handleValidation = () => {
+    let isValid = true;
+
+    if (inputValue.title.length < 5) {
+      setTitleError("Title must be at least 5 characters");
+      isValid = false;
+    } else {
+      setTitleError("");
+    }
+
+    if (isNaN(inputValue.points) || inputValue.points >= 8) {
+      setPointsError("Points should be max value 8");
+      isValid = false;
+    } else {
+      setPointsError("");
+    }
+    if (inputValue.status.length < 5) {
+      setStatus("This field is Mandatory");
+      isValid = false;
+    } else {
+      setStatus("");
+    }
+    if (inputValue.priority.length < 5) {
+      setPriority("This field is Mandatory select");
+      isValid = false;
+    } else {
+      setPriority("");
+    }
+
+    if (inputValue.description.length === 0) {
+      setDescriptionError("Description is required");
+      isValid = false;
+    } else {
+      setDescriptionError("");
+    }
+
+    return isValid;
+  };
   return (
     <>  
       <div className="story_main">
@@ -54,6 +97,9 @@ function Addstory(props: any){
                value={inputValue.title}
               onChange={handleChangeCallback}
               />
+               {/* {error && <p className="error_message">{error}</p>} */}
+               {titleError && <p className="error_message">{titleError}</p>}
+               
             </div>
             <div className="form_control test">
               <label>
@@ -65,6 +111,8 @@ function Addstory(props: any){
                 value={inputValue.points}
                 onChange={handleChangeCallback}
               />
+                {/* {error && <p className="error_message">{error}</p>} */}
+                {pointsError && <p className="error_message">{pointsError}</p>}
             </div>
           </div>
           <div className="form_control_secon">
@@ -78,6 +126,7 @@ function Addstory(props: any){
                 <option value="Development">Development</option>
                 <option value="Groming">Groming</option>
               </select>
+              {Status && <p className="error_message">{Status}</p>}
             </div>
             <div className="form_control_cont">
               <label>Prority </label>
@@ -87,6 +136,7 @@ function Addstory(props: any){
                 <option value="🏳️">🏳️</option>
                 <option value="🚩">🚩</option>
               </select>
+              {priority && <p className="error_message">{priority}</p>}
             </div>
           </div>
           <div className="form_label">
@@ -99,13 +149,20 @@ function Addstory(props: any){
               value={inputValue.description}
               onChange={handleChangeCallback}
             />
+            {descriptionError && <p className="error_message">{descriptionError}</p>}
           </div>
         </form>
         <div className="floating_btn">
           <button>cancel</button>
           <button 
-              onClick={submitData}
-          >
+          onClick={() => {
+            if (handleValidation()) {
+              submitData(inputValue);
+            }
+          }}
+        >
+            {/* //  onClick={submitData} */}
+          
             save</button>
         </div>
       </div> 

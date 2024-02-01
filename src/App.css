@@ -223,3 +223,6 @@ input{
   input[name="gender"] {
 	accent-color: green;
 }
+.error_message{
+    color: red;
+}
