@@ -2,39 +2,7 @@ import { useState } from "react";
 import "../App.css";
 function Addstory(props: any){
     const {handleChangeCallback, submitData, inputValue } = props ;
-    const [errors, setErrors] = useState(inputValue);
-
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = { ...inputValue };
-
-    // Validate title
-    if (!inputValue.title.trim()) {
-      newErrors.title = "Title is required";
-      valid = false;
-    }
-
-    // Validate points
-    if (!inputValue.points.trim()) {
-      newErrors.points = "Points are required";
-      valid = false;
-    }
-
-    // Validate status
-    if (inputValue.status === "none") {
-      newErrors.status = "Please select a status";
-      valid = false;
-    }
-
-    // Validate description
-    if (!inputValue.description.trim()) {
-      newErrors.description = "Description is required";
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
+ 
   return (
     <>  
       <div className="story_main">
@@ -131,17 +99,12 @@ function Addstory(props: any){
               value={inputValue.description}
               onChange={handleChangeCallback}
             />
-            <span className="error">{errors.description}</span>
           </div>
         </form>
         <div className="floating_btn">
           <button>cancel</button>
           <button 
-          onClick={() => {
-            if (validateForm()) {
-              submitData();
-            }
-          }}
+              onClick={submitData}
           >
             save</button>
         </div>
