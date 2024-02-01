@@ -1,0 +1,225 @@
+*{
+    @apply p-0 m-0 box-border font-sans
+}
+
+.header_menu{
+  /* @apply absolute left-[60px]; */
+     /* width: calc(100% - 75px) */
+}
+.header_logo_main{
+    @apply border flex items-center justify-between px-8 py-2 rounded bg-white shadow-md mx-8;
+}
+.logo{
+    @apply inline-block align-middle;
+}
+.logo >img{
+    width: 100px;
+}
+.edit_content{
+    @apply bg-gray-300  align-middle px-6 py-2 ml-5 rounded-sm flex;
+}
+.edit_icon{
+    @apply inline-block border-l-[1px] border-black ml-3
+}
+.logo_right{
+    @apply flex ;
+    align-items: center;
+}
+.logo_right >svg{
+    @apply mx-4
+}
+.profile{
+    @apply border text-white uppercase h-[40px] w-[40px] text-center rounded-full p-2;
+    background-color:#91e639;
+}
+.profile >p{
+    @apply font-bold
+}
+.logo_left{
+    @apply flex
+}
+.edit_input >input{
+    @apply outline-none bg-inherit;
+}
+/* navmenu css */
+.navMenu_head{
+    @apply w-[75px] h-[100vh] border
+}
+.nav_list{
+    @apply flex flex-col pt-12;
+    align-items: center;
+}
+.nav_list >li{
+    @apply block pb-8
+}
+.nav_list >li >a >img{
+    @apply w-[24px]
+}
+.submenu_list{
+    @apply flex justify-center;
+    align-items: center;
+}
+.submenu_list >small{
+    font-size: 16px;
+    margin-left: 15px;
+}
+.main_component{
+    display: flex;
+}
+.navMenu_head {
+    transition: 0.3s ease;
+    border: 1px solid #ccc;
+    height: 100vh;
+  }
+  .expanded {
+    width: 250px;
+    height: 100vh;
+  } 
+  .collapsed {
+    width: 75px;
+    height: 100vh;
+  }
+  .nav_icon{
+    @apply flex justify-center pt-6
+  }
+  /* body compontent css */
+ 
+.body_cont{
+    width: calc(100% - 75px) 
+}
+.story_main{
+    @apply border w-[50%] rounded-md absolute top-[60%] left-[50%] shadow-lg;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.story_title{
+    @apply py-4 px-3 flex justify-between text-white; 
+    background: #00b48f;
+}
+.form_head{
+    @apply p-4
+}
+.story_cont{
+    @apply text-white font-bold ;  
+}
+.story_icon{
+    @apply flex 
+}
+.story_icon >svg{
+    @apply mx-2
+}
+.form_control >label{
+    @apply block font-medium capitalize;
+    font-size: 16px;
+}
+.form_control >input{
+    @apply border h-12 rounded-md w-[100%] px-3;
+}
+.form_control_first{
+   @apply flex justify-between gap-10
+}
+.form_control{
+    @apply w-5/6
+}
+.test {
+    @apply w-1/6
+}
+input{
+    font-size: 0px;
+}
+.form_control_secon{
+    @apply flex gap-4 pt-5
+}
+.form_control_cont{
+    @apply w-2/6
+}
+.form_control_cont >label{
+    @apply block font-medium capitalize;
+    font-size: 16px;
+}
+.form_control_cont >select{
+    @apply w-[100%] border h-12 rounded-md
+}
+.form_label {
+    @apply pt-5
+}
+.form_label >label{
+    @apply block font-medium capitalize;
+    font-size: 16px;
+}
+.form_label >input{
+   @apply w-[100%] border h-12 rounded-md
+}
+.floating_btn{
+    @apply text-right gap-4 flex justify-end px-4 py-5 border-y mt-10
+}
+.floating_btn >button{
+    @apply border px-4 py-2 rounded-md
+}
+.floating_btn >button:first-child{
+    @apply text-white font-medium;
+    background-color: #0386d3;
+}
+.floating_btn >button:last-child{
+    @apply text-white font-medium ;
+    background-color: #00b48f;
+}
+  table, td, th {  
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    padding: 15px;
+  }
+  .table_main_cont{
+    @apply border mx-8 mt-8 shadow-lg rounded-md;
+  }
+  .table_head_section{
+    @apply flex justify-between border-b-2 py-5 px-3;
+    align-items: center;
+  }
+  .list_icon_table{
+    @apply flex justify-center gap-4;
+  }
+  .list_icon_table >li{
+   @apply flex justify-center;
+   align-items: center;
+  }
+  .add_color{
+    @apply border w-[35px] h-[35px] rounded-md flex justify-center text-white;
+    align-items: center;
+  }
+  .green{
+    background-color: #02b38f;
+  }
+  .orange{
+    background-color: #ee6e57;
+  }
+  .purple{
+    background-color: #8471c5;
+  }
+  .light_green{
+    background-color: #69ca46;
+  }
+  .task_left >h3{
+    @apply text-2xl
+  }
+  .task_left{
+    @apply flex justify-center;
+    align-items: center;
+  }
+  .task_left >input{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+  input[name="gender"] {
+	accent-color: green;
+}
