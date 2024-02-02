@@ -25,7 +25,7 @@ function App() {
     <div className='main_component'  >
     <NavMenu handleChangeCallback = {handleChange} submitData = {submitData} inputValue = {inputValue}/>
    <div className='body_cont'>
-     <Header newTable={newTable} deleteRow={deleteRow} />
+     <Header newTable={newTable} deleteRow={deleteRow} setNewTable={setNewTable}/>
    </div>
     </div>
   )

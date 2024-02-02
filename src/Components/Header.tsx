@@ -6,6 +6,12 @@ export function TableData(props: any){
 const handleDeleteRow = (index: number) => {
   deleteRow(index);
 };
+const handleFilterData = (status: any) => {
+  if (status !== "none") {
+    let filterArray = props.newTable.filter((item: any) => item.status === status);
+    props.setNewTable(filterArray);
+  }
+};
 // let date = new Date().toJSON();
 let currentDate = new Date().toJSON().slice(0, 10);
     return(
@@ -14,6 +20,12 @@ let currentDate = new Date().toJSON().slice(0, 10);
           <div className='task_left'>
             <input type='radio' name="gender" />
             <h3>Task</h3></div>
+            <div><select onClick={(e:any) => handleFilterData(e.target.value)}>
+                    <option value = 'none'>---Status Filter---</option>
+                    <option value = 'Backlog'>Backlog</option>
+                    <option value = 'Development'>Development</option>
+                    <option value = 'Grooming'>Grooming</option>
+                </select></div>
           <div>
             <ul className='list_icon_table'>
               <li>
@@ -131,7 +143,7 @@ function Header(props:any) {
         </div>
         </div>
       </div>
-     <TableData newTable = {props.newTable} deleteRow={props.deleteRow}/>
+     <TableData newTable = {props.newTable} deleteRow={props.deleteRow} setNewTable={props.setNewTable}/>
     </div>
 
   )
