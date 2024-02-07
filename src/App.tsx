@@ -18,9 +18,17 @@ function App() {
     setNewTable((p): any => [...p, inputValue]);
     setInputValue({title: "",  points: "",description:"",status:"",priority:""});
   };
+  
   const deleteRow = (index: number) => {
     setNewTable((prevTable) => prevTable.filter((item:any, i:any) => i !== index));
   };
+  // const [index, setIndex] = useState();
+  // const[editRows,setEditRows]=useState(false)
+  // const editRow = (i: any) => {
+  //   setInputValue({ ...newTable[i] });
+  //   setEditRows(true);
+  //   setIndex(i);
+  // };  
   return (
     <div className='main_component'  >
     <NavMenu handleChangeCallback = {handleChange} submitData = {submitData} inputValue = {inputValue}/>

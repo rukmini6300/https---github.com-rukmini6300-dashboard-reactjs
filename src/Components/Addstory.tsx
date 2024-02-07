@@ -159,9 +159,7 @@ function Addstory(props: any){
               submitData(inputValue);
             }
           }}
-        >
-            {/* //  onClick={submitData} */}
-          
+        > 
             save</button>
         </div>
       </div> 
